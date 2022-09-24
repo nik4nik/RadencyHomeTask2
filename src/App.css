@@ -1,0 +1,68 @@
+.check-archived-switch.form-check-input {
+    width: 50px;
+    height: 25px;
+}
+
+.modal {
+    display: block;
+}
+
+table{
+    width:100%;
+	border-collapse: separate;
+}
+
+th,td,caption{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	padding: 20px;
+	text-align: left;
+}
+
+.th{
+    background:silver;
+    color: #fff;
+}
+
+th:nth-child(1) {
+    border-radius: 10px 0px 0px 10px;
+}
+
+th:nth-last-child(1) {
+    border-radius: 0px 10px 10px 0px;
+}
+
+td {
+	background: lightblue;
+	border-top: 10px solid white;
+	border-bottom: 10px solid white;
+}
+
+#thTrash {
+	filter: invert(100%);
+	background-image: url("../public/img/trash.svg");
+}
+
+#thArchiv {
+	filter: invert(100%);
+	background-image: url("../public/img/archive.svg");
+}
+
+#thUnarchiv {
+	filter: invert(100%);
+	background-image: url("../public/img/unarchive.svg");
+}
+
+.pict {
+    width: 30px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
