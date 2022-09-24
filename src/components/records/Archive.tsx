@@ -15,18 +15,31 @@ function Records({ notesArr, unarchiveNote }: Props) {
 		unarchiveNote((e.target! as HTMLImageElement).id)
 	}
 	const recordsMarkup = notesArr.filter(note => note.archived).map((note, idx) =>
-		<div key={idx}
-			className="mx-4 my-2"
-			style={{ width: 18 + 'rem' }}
-		>
+		<tr key={idx}>
+			<td width="10px"><img className='pict' src={'./img/' + note.category.replaceAll(' ', '') + '.svg'} alt=''/></td>
 			<td>{note.name}</td>
 			<td>{note.time}</td>
-			<td>{note.text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</td>
 			<td>{note.category}</td>
+			<td>{note.text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</td>
 			<td><img className="pict" id={note.id} onClick={handleUnarchiveNote} src='./img/unarchive.svg' alt='Unarchive'/></td>
-		</div>
+		</tr>
 	)
-	return <>{recordsMarkup.length ? recordsMarkup : <Empty/> }</>
+
+	return recordsMarkup.length ?
+		<>
+			<thead>
+				<tr>
+				{[
+					'', 'Name',	'Created', 'Category', 'Content',
+					<div id="thUnarchiv" className="pict"></div>
+				].map((e, i) => <th key={i} className="th">{e}</th>)}
+				</tr>
+			</thead>
+			<tbody id="archivedItems">
+				{recordsMarkup}
+			</tbody>
+		</>: 
+		<Empty/>
 }
 
 const mapStateToProps = (state: State) => ({
