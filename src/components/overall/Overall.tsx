@@ -2,7 +2,7 @@ import OverallRow from './OverallRow'
 
 function Overall() {
 	return (
-		<table  cellSpacing="0">
+		<>
 			<thead>
 				<tr>
 					<th className="th" ></th>
@@ -14,7 +14,7 @@ function Overall() {
 			<tbody id="table-body">
 				<OverallRow />
 			</tbody>
-		</table>
+		</>
 	)
 }
 

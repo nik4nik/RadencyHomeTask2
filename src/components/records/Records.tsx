@@ -51,7 +51,7 @@ function Records({ notesArr, removeNote, archiveNote, openModal }: Props) {
 	)
 
 	return recordsMarkup.length ?
-		<table cellSpacing="0">
+		<>
 		<thead>
 			<tr>
 			{[
@@ -64,7 +64,7 @@ function Records({ notesArr, removeNote, archiveNote, openModal }: Props) {
 		<tbody id="todoItems">
 			{recordsMarkup}
 		</tbody>
-		</table>:
+		</>:
 		<Empty/>
 }
 

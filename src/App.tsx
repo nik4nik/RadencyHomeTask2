@@ -6,6 +6,7 @@ import Archive from './components/records/Archive'
 import Records from './components/records/Records'
 import Modal from './components/forms/Modal'
 import Overall from './components/overall/Overall'
+import Table from './components/table/Table'
 
 type Props = {
   modalData: ModalData,
@@ -16,9 +17,9 @@ function App({modalData, showArchived}: Props) {
   return (
     <div className="App my-3 px-5">
 		{(modalData.edit || modalData.add) && <Modal/>}
-		{showArchived ? <Archive/> : <Records/>}
+		<Table>{showArchived ? <Archive/> : <Records/>}</Table>
 		<AddConrol/>
-		<Overall/>
+		<Table><Overall/></Table>
     </div>
   )
 }
